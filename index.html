@@ -1,16 +1,52 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Firebase Gallery</title>
-  <link rel="stylesheet" href="styles.css">
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Firebase Gallery</title>
+	<style>
+		.gallery {
+			display: flex;
+			flex-wrap: wrap;
+			justify-content: center;
+		}
+		.gallery img {
+			width: 200px;
+			height: 200px;
+			margin: 10px;
+			border-radius: 10px;
+		}
+	</style>
 </head>
 <body>
-  <div id="gallery" class="gallery"></div>
-  
-  <script src="https://www.gstatic.com/firebasejs/9.1.0/firebase-app.js"></script>
-  <script src="https://www.gstatic.com/firebasejs/9.1.0/firebase-storage.js"></script>
-  <script src="script.js"></script>
+	<h1>Firebase Gallery</h1>
+	<div class="gallery"></div>
+	<script src="(link unavailable)"></script>
+	<script>
+		// Initialize Firebase
+		const firebaseConfig = {
+			// Your Firebase configuration
+			apiKey: "AIzaSyDNLKv9rbkOxf3r4yBLndN5IiMyM_I6LXM",
+			authDomain: "ammaxx-656f1.firebaseapp.com",
+			projectId: "ammaxx-656f1",
+			storageBucket: "ammaxx-656f1.appspot.com",
+			messagingSenderId: "967023338998",
+			appId: "1:967023338998:web:75843377f8c101d709d3d7"
+		};
+		firebase.initializeApp(firebaseConfig);
+		
+		// Reference the Firebase Realtime Database
+		const dbRef = firebase.database().ref('images');
+		
+		// Retrieve images from the database
+		dbRef.on('value', (data) => {
+			const gallery = document.querySelector('.gallery');
+			data.val().forEach((image) => {
+				const img = document.createElement('img');
+				img.src = image.url;
+				gallery.appendChild(img);
+			});
+		});
+	</script>
 </body>
 </html>
