@@ -1,4 +1,4 @@
-import { User, onAuthStateChanged } from 'firebase/auth'
+/* import { User, onAuthStateChanged } from 'firebase/auth'
 import { children, createContext, useInsertionEffect, useState } from "react";
 
 interface AuthContextType {
@@ -33,3 +33,4 @@ export const AuthProvider: FC <AuthProviderProps> = ({ Children }) => {
 
     return <AuthContext.Provider value={value}>{children}</AuthContext.Provider>;
 }
+*/
