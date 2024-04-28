@@ -3,6 +3,7 @@ import NavBar from "../components/NavBar";
 import UploadForm from "../components/UploadForm";
 
 const Home = () => {
+
     return (
         <div className="max-w-4xl mx-auto">
             <NavBar />
