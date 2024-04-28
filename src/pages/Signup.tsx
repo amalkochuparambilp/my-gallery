@@ -23,7 +23,7 @@ const Signup = () => {
   };
 
   return <form onSubmit={handleSubmit}>
-    {error && error}
+{error && error}
     <div className="hero min-h-screen bg-base-200">
       <div className="hero-content flex-col ">
         <div className="text-center ">
