@@ -1,5 +1,6 @@
-/* import { User, onAuthStateChanged } from 'firebase/auth'
-import { children, createContext, useInsertionEffect, useState } from "react";
+import { User ,onAuthStateChanged } from 'firebase/auth';
+import { FC, createContext, useState, useEffect } from "react";
+import { auth } from '../firebase/config';
 
 interface AuthContextType {
     user: User | null,
@@ -13,17 +14,17 @@ export const AuthContext = createContext<AuthContextType>({
 interface AuthProviderProps {
     children: React.ReactElement;
 }
-export const AuthProvider: FC <AuthProviderProps> = ({ Children }) => {
+export const AuthProvider: FC <AuthProviderProps> = ({ children }) => {
     const [user, setUser] = useState<User | null>(null);
     const [isLoading, setIsLoading] = useState<boolean>(false);
 
-    useInsertionEffect(() => {
+    useEffect(() => {
         const unsubscribe = onAuthStateChanged(auth, (user) => {
             setUser(user);
             setIsLoading(false)
         })
 
-        return unsubscribe
+        return unsubscribe;
     }, []);
 
     const value = {
@@ -33,4 +34,3 @@ export const AuthProvider: FC <AuthProviderProps> = ({ Children }) => {
 
     return <AuthContext.Provider value={value}>{children}</AuthContext.Provider>;
 }
-*/

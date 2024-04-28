@@ -5,7 +5,7 @@ const Signup = () => {
   <div className="hero-content flex-col ">
     <div className="text-center ">
       <h1 className="text-5xl font-bold">kGALLERY</h1>
-      <p className="py-6">Sigup now to assces kGALLERY</p>
+      <p className="py-6">Sigup now to kGALLERY</p>
     </div>
     <div className="card sm:w-[3-0] shadow-2xl bg-base-100">
       <form className="card-body">
